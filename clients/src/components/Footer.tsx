@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer">
       <p>&copy; 2024 Tom Wang. All Rights Reserved.</p>
       <div className="footer__links">
-        {["About", "Privacy Policy", "Licensing", "Contact"].map((item) => (
+        {["About", "Privacy Polic", "Licensing", "Contact"].map((item) => (
           <Link
             key={item}
             href={`/${item.toLowerCase().replace(" ", "-")}`}
