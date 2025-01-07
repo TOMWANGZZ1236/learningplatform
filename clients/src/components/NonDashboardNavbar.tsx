@@ -1,17 +1,21 @@
 "use client";
 
-
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import { Bell, BookOpen } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 const NonDashboardNavbar = () => {
+  const { user } = useUser();
+  const userRole = user?.publicMetadata?.userType as "student" | "teacher";
+
   return (
     <nav className="nondashboard-navbar">
       <div className="nondashboard-navbar__container">
         <div className="nondashboard-navbar__search">
           <Link href="/" className="nondashboard-navbar__brand" scroll={false}>
-            Tom
+            EDROH
           </Link>
           <div className="flex items-center gap-4">
             <div className="relative group">
@@ -36,7 +40,7 @@ const NonDashboardNavbar = () => {
             <Bell className="nondashboard-navbar__notification-icon" />
           </button>
 
-          {/* <SignedIn>
+          <SignedIn>
             <UserButton
               appearance={{
                 baseTheme: dark,
@@ -67,7 +71,7 @@ const NonDashboardNavbar = () => {
             >
               Sign up
             </Link>
-          </SignedOut> */}
+          </SignedOut>
         </div>
       </div>
     </nav>
