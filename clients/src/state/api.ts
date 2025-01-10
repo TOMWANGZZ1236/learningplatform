@@ -154,7 +154,10 @@ export const api = createApi({
     getTransactions: build.query<Transaction[], string>({
       query: (userId) => `transactions?userId=${userId}`,
     }),
-    createStripePaymentIntent: build.mutation<{ clientSecret: string },{ amount: number }>({
+    createStripePaymentIntent: build.mutation<
+      { clientSecret: string },
+      { amount: number }
+    >({
       query: ({ amount }) => ({
         url: `/transactions/stripe/payment-intent`,
         method: "POST",
@@ -179,7 +182,10 @@ export const api = createApi({
       providesTags: ["Courses", "UserCourseProgress"],
     }),
 
-    getUserCourseProgress: build.query<UserCourseProgress,{ userId: string; courseId: string }>({
+    getUserCourseProgress: build.query<
+      UserCourseProgress,
+      { userId: string; courseId: string }
+    >({
       query: ({ userId, courseId }) =>
         `users/course-progress/${userId}/courses/${courseId}`,
       providesTags: ["UserCourseProgress"],

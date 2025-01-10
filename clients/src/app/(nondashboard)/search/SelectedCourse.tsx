@@ -1,8 +1,7 @@
-
+import AccordionSections from "@/components/AccordionSections";
 import { Button } from "@/components/ui/button";
 import { formatPrice } from "@/lib/utils";
 import React from "react";
-import AccordionSections from "@/components/AccordionSections";
 
 const SelectedCourse = ({ course, handleEnrollNow }: SelectedCourseProps) => {
   return (
@@ -35,7 +34,7 @@ const SelectedCourse = ({ course, handleEnrollNow }: SelectedCourseProps) => {
           >
             Enroll Now
           </Button>
-        </div>  
+        </div>
       </div>
     </div>
   );

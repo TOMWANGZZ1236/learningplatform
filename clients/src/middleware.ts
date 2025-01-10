@@ -4,12 +4,22 @@ import { NextResponse } from "next/server";
 const isStudentRoute = createRouteMatcher(["/user/(.*)"]);
 const isTeacherRoute = createRouteMatcher(["/teacher/(.*)"]);
 
+
+
 export default clerkMiddleware(async (auth, req) => {
-  const { sessionClaims } = await auth();
+
+  const {sessionClaims} = await auth();
   const userRole =
     (sessionClaims?.metadata as { userType: "student" | "teacher" })
       ?.userType || "student";
-
+  setTimeout(() => {
+        console.log('Reached123');
+        console.log(isStudentRoute);
+        console.log(isTeacherRoute);
+        console.log(userRole);
+        console.log(sessionClaims?.metadata );
+        console.log(sessionClaims);
+      }, 3000);
   if (isStudentRoute(req)) {
     if (userRole !== "student") {
       const url = new URL("/teacher/courses", req.url);
@@ -17,7 +27,7 @@ export default clerkMiddleware(async (auth, req) => {
     }
   }
 
-  if (isTeacherRoute(req)) {
+  else if (isTeacherRoute(req)) {
     if (userRole !== "teacher") {
       const url = new URL("/user/courses", req.url);
       return NextResponse.redirect(url);
