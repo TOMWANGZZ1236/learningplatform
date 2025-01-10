@@ -2,12 +2,12 @@
 **/dist/
 
 .env
-client/.env.local
-client/.env.development
-client/.env.production
+clients/.env.local
+clients/.env.development
+clients/.env.production
 server/.env
 
-client/.next/
+clients/.next/
 
 .DS_Store
 Thumbs.db
