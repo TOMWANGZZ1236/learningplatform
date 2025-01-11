@@ -52,7 +52,7 @@ const AppSidebar = () => {
   const userType =
     (user.publicMetadata.userType as "student" | "teacher") || "student";
   const currentNavLinks = navLinks[userType];
-
+  console.log(userType);
   return (
     <Sidebar
       collapsible="icon"

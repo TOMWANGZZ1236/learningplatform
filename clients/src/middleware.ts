@@ -4,35 +4,35 @@ import { NextResponse } from "next/server";
 const isStudentRoute = createRouteMatcher(["/user/(.*)"]);
 const isTeacherRoute = createRouteMatcher(["/teacher/(.*)"]);
 
-
-
 export default clerkMiddleware(async (auth, req) => {
-
-  const {sessionClaims} = await auth();
+  const { sessionClaims } = await auth();
   const userRole =
     (sessionClaims?.metadata as { userType: "student" | "teacher" })
       ?.userType || "student";
-  setTimeout(() => {
-        console.log('Reached123');
-        console.log(isStudentRoute);
-        console.log(isTeacherRoute);
-        console.log(userRole);
-        console.log(sessionClaims?.metadata );
-        console.log(sessionClaims);
-      }, 3000);
-  if (isStudentRoute(req)) {
-    if (userRole !== "student") {
-      const url = new URL("/teacher/courses", req.url);
-      return NextResponse.redirect(url);
+    
+    // setTimeout(() => {
+    //   console.log(userRole);
+    //   console.log(sessionClaims?.userType );
+    //   console.log(sessionClaims);
+    // }, 3000);
+    if (isStudentRoute(req)) {
+      console.log(1, 'Reached123');
+      if (sessionClaims?.userType !== "student"  && typeof sessionClaims?.userType !== 'undefined') {
+        const url = new URL("/teacher/courses", req.url);
+        return NextResponse.redirect(url);
+      }
     }
-  }
-
-  else if (isTeacherRoute(req)) {
-    if (userRole !== "teacher") {
-      const url = new URL("/user/courses", req.url);
-      return NextResponse.redirect(url);
+  
+    if (isTeacherRoute(req)) {
+      console.log(2, 'Reached123');
+      console.log(3, sessionClaims?.userType )
+      if (sessionClaims?.userType !== "teacher" && typeof sessionClaims?.userType !== 'undefined') {
+        console.log(4, 'reached456')
+        const url = new URL("/user/courses", req.url);
+        return NextResponse.redirect(url);
+      }
     }
-  }
+ 
 });
 
 export const config = {
