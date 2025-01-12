@@ -39,8 +39,11 @@ const PaymentPageContent = () => {
 
     const result = await stripe.confirmPayment({
       elements,
+      // confirmParams: {
+      //   return_url: `${process.env.NEXT_PUBLIC_STRIPE_REDIRECT_URL}?id=${courseId}`,
+      // },
       confirmParams: {
-        return_url: `${process.env.NEXT_PUBLIC_STRIPE_REDIRECT_URL}?id=${courseId}`,
+        return_url: `https://learningplatform-orcin.vercel.app/checkout?step=3&id=${courseId}`,
       },
       redirect: "if_required",
     });
