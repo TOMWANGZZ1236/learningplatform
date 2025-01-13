@@ -33,9 +33,9 @@ This Learning Management Application is designed to create a learning platform f
 
 ## Features
 We support role-based features:
-  User role:
+  ### User role:
   - Purchase courses and watch course content
-  Teacher role:
+  ### Teacher role:
   - Upload courses (sections + chapters + videos)
 Shared features:
   - Billing
