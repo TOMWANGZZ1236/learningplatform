@@ -1,4 +1,4 @@
-# Learning Management Platform
+# Learning Management Platform 📚👨🏻‍🏫
 
 This Learning Management Application is designed to create a learning platform for users and content sharing platform for teachers
 
