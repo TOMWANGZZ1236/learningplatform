@@ -36,7 +36,7 @@ We support role-based features:
   ### User role:
   - Purchase courses and watch course content
   ### Teacher role:
-  - Upload courses and modify them (sections + chapters + videos)
+  - Upload courses and update them (sections + chapters + videos)
   ### Shared features:
   - Billing
   - Profile
