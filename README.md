@@ -28,7 +28,7 @@ This Learning Management Application is designed to create a learning platform f
 - CloudFront
 
 <p align="center">
-  <img src="/clients/awsinfra.png" alt="aws infrastructure" width="600">
+  <img src="/clients/awsinfrastructure.jpg" alt="aws infrastructure" width="600">
 </p>
 
 ### Authentication
