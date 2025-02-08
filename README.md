@@ -5,6 +5,7 @@ This Learning Management Application is designed to create a learning platform f
 ## Technologies Used
 
 ### Frontend
+
 - Next.js
 - Redux Toolkit
 - Tailwind CSS
@@ -16,6 +17,7 @@ This Learning Management Application is designed to create a learning platform f
 - Stripe
 
 ### Backend
+
 - Node.js
 - Express.js
 - Docker
@@ -25,20 +27,32 @@ This Learning Management Application is designed to create a learning platform f
 - S3
 - CloudFront
 
+<p align="center">
+  <img src="/clients/awsinfra.png" alt="aws infrastructure" width="250">
+</p>
+
 ### Authentication
+
 - Clerk
 
 ### Frontend Hosting
+
 - Vercel
 
 ## Features
-We support role-based features:
-  ### User role:
-  - Purchase courses and watch course content
-  ### Teacher role:
-  - Upload courses and update them (sections + chapters + videos)
-  ### Shared features:
-  - Billing
-  - Profile
-  - Setting
 
+We support role-based features:
+
+### User role:
+
+- Purchase courses and watch course content
+
+### Teacher role:
+
+- Upload courses and update them (sections + chapters + videos)
+
+### Shared features:
+
+- Billing
+- Profile
+- Setting
